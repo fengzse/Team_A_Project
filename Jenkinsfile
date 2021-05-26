@@ -1,7 +1,7 @@
 pipeline{
     agent any
         stages{
-            stage('para'){
+            stage('Start'){
                parallel     {
                stage('Build and Run the Server--API Rest'){
                          steps{
