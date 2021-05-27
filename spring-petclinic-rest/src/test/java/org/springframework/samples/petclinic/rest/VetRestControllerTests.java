@@ -108,13 +108,13 @@ public class VetRestControllerTests {
             .andExpect(jsonPath("$.firstName").value("James"));
     }
 
-
+    /*
     @Test
     @WithMockUser(roles="VET_ADMIN")
     public void testMath() throws Exception {
         assertEquals(0*9, 1*5, "Black hole check: Make sure this code is running in a parallel universe with Math=OFF ");
     }
-
+    */
 
     @Test
     @WithMockUser(roles="VET_ADMIN")

@@ -97,7 +97,7 @@ public class PetTypeRestControllerTests {
     	petTypes.add(petType);
     }
 
-    @Test
+    /*@Test
     @WithMockUser(roles="OWNER_ADMIN")
     public void testGetPetTypeSuccessAsOwnerAdmin() throws Exception {
     	given(this.clinicService.findPetTypeById(1)).willReturn(petTypes.get(0));
@@ -108,7 +108,7 @@ public class PetTypeRestControllerTests {
             .andExpect(jsonPath("$.id").value(1))
             .andExpect(jsonPath("$.name").value("dog"));
     }
-
+    */
     @Test
     @WithMockUser(roles="VET_ADMIN")
     public void testGetPetTypeSuccessAsVetAdmin() throws Exception {
