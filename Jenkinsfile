@@ -20,15 +20,13 @@ pipeline{
                         }
                     }
 
-                stage('Unit Test') {
+                stage('JUnit') {
                         steps{
-                            catchError(buildResult: 'FAILURE', stageResult: 'FAILURE'){
                                 sh 'cd spring-petclinic-rest && mvn test'
-                                }
                             }
                         post {
                             always {
-                                    unit '**/target/surefire-reports/TEST*.xml'
+                                    unit '**/target/surefire-reports/**.xml'
                             }
                         }
                 }
