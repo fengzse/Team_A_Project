@@ -52,8 +52,8 @@ AND add a new Owner CF
 AND verify that a new owner CF is saved in Owners Page
 #We are on the list with all owners
     Page Should Contain                 Owners
-    Wait Until Element Is Visible       xpath:/html/body/app-root/app-owner-list/div/div/div/table/tbody/tr[11]
-    #xpath:/html/body/app-root/app-owner-list/div/div/div/table/tbody/tr[15]/td[1]/a     #We can see in the list Number 15 is Linda Björklund
+    Wait Until Element Is Visible       xpath:/html/body/app-root/app-owner-list/div/div/div/table/tbody/tr[11]/td[1]/a
+    #xpath:/html/body/app-root/app-owner-list/div/div/div/table/tbody/tr[11]/td[1]/a     #We can see in the list Number 11 is Linda Björklund
 
 AND then add Pet to the owner CF
 #We start from a list with all owners
