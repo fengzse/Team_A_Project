@@ -64,18 +64,44 @@ Courtesy  ![alt petclinic-junit](git-res/infotiv.png) and ![alt petclinic-junit]
   Step 4. Run the following commands on the terminal 
 
             git clone https://github.com/fengzse/Team_A_Project.git	
+            Follow the steps listed in the readme.md files in /spring-petclinic-angular/README.md
+            and the steps listed in   /spring-petclinic-rest/README.md
+            
+            Then use a local jenkins or a remote jenkisn with relevant plugings installed for Postman , Robot , Junit and a  working email setup
             
  
 # Steps for using IDE on your system (to be done)
+ you can also use IDE like IntelliJ or Exclipse . Use VCS and connect the repository and then  use jenkins.
  
+ 
+# Special feature of this repository
+
+## Team_A_Project/tree/master/jenkinsfilelist    
+  THis folder contains different jenkins files which can be used to do different types of test (individually or together with email confirmation or without.)
+  Just remmeber to go thru the jenkins file code and use the correct path whensetting up the pipeline in Jenkins. 
+  for eg   jenkinsfilelist/Jenkinsfile
+          jenkinsfilelist/Jenkinsfilepostmanrobotemail
+ 
+ It is not normal to rename the jenkins file. If you want to follow standard protocol, Use the Jenkinsfile and copy the entire code from the relevant file in the 
+ Team_A_Project/tree/master/jenkinsfilelist     folder.
+ 
+
+** Also we have our emails updated 
+to: 'jenkins.iths.mailer@gmail.com, rajpalmanish@gmail.com, jayashree.bondre@iths.se, shubhangi.patil@iths.se, feng.zhu@iths.se, victor.hedstrom@iths.se, maria.shishkina@iths.se, elias.arezomande@iths.se',
+
+make sure 
+
+to: 'youremail@server.com, otheremailaddess',
+
+
             
 # About team
 
  Ellias, Feng, Jayashree, Manish, Maria, Shubhangi, Victor
 
-# About Repo (repo structure)
+# About Repo (repo structure) and the data flow
 We have made the following structure  
-![alt petclinic-junit](git-res/RepoStructure.png)
+
 
 
 ## Credits
