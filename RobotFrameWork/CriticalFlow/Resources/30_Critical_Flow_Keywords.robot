@@ -5,24 +5,26 @@ BEGIN WEB TEST
 GIVEN Web page is open at start page
     Load Page
     Verify Page Loaded
+
 Load Page
     Go to                       ${URL}
+
 Verify Page Loaded
     ${link_text}                Get Title
-    Should Be Equal             ${link_text}    SpringPetclinicAngular
+    Should Be Equal             ${link_text}      SpringPetclinicAngular
     Page Should Contain         Welcome to Petclinic
 
-WHEN the user can find and click OWNER menu
+WHEN the user find and click on OWNER menu
 #Find "OWNERS" in menu and click on it
     wait until page contains            Owners
     Click Element                       xpath:/html/body/app-root/div[1]/nav/div/ul/li[2]
 
-AND find ALL
+AND find ALL List of OWNERS
 #Find ALL under OWNERS roll-down menu and click on it
     Page Should Contain Element         //*[@routerlink="/owners"]
     Click Element                       //*[@routerlink="/owners"]
 
-AND see all menu for Owners
+AND Verify all Column names for the OWNERS List
 #verify that we can see all menu and list with owners
     Page Should Contain                 Owners
     Page Should Contain Element         //*[@class="table table-striped"]
@@ -32,11 +34,11 @@ AND see all menu for Owners
     Element Text Should be              //*[@class="table table-striped"]/thead/tr/th[4]      Telephone
     Element Text Should be              //*[@class="table table-striped"]/thead/tr/th[5]      Pets
 
-AND can click on "Add Owner" CF         #CF = Critical Flow
+AND click on "Add Owner" CF         #CF = Critical Flow
 #We can click on menu button for "Add Owner"
     Click Element                       xpath:/html/body/app-root/app-owner-list/div/div/div/div/button
 
-AND can add a new Owner CF
+AND add a new Owner CF
 # adding information about new owner 1
     [Arguments]                         ${CF_FIRST_NAME_OWNER}       ${CF_LAST_NAME_OWNER}     ${CF_ADDRESS_OWNER}      ${CF_CITY_OWNER}    ${CF_TELEPHONE_OWNER}
     Input Text                          id:firstName    ${CF_FIRST_NAME_OWNER}
@@ -47,15 +49,16 @@ AND can add a new Owner CF
     Click Button                        xpath:/html/body/app-root/app-owner-add/div/div/form/div[7]/div/button[2]   #Click "Add owner" (under alll input) to save it
 #We are back to the list with all owners
 
-AND can verify a new owner CF is saved
+AND verify that a new owner CF is saved in Owners Page
 #We are on the list with all owners
     Page Should Contain                 Owners
-    Wait Until Element Is Visible       xpath:/html/body/app-root/app-owner-list/div/div/div/table/tbody/tr[15]/td[1]/a     #We can see in the list Number 15 is Linda Björklund
+    Wait Until Element Is Visible       xpath:/html/body/app-root/app-owner-list/div/div/div/table/tbody/tr[11]
+    #xpath:/html/body/app-root/app-owner-list/div/div/div/table/tbody/tr[15]/td[1]/a     #We can see in the list Number 15 is Linda Björklund
 
-AND can add Pet 1 CF
+AND then add Pet to the owner CF
 #We start from a list with all owners
     [Arguments]                         ${CF_PET_NAME_OWNER}     ${CF_BIRTH_DATE_PET_OWNER}
-    Click Element                       xpath:/html/body/app-root/app-owner-list/div/div/div/table/tbody/tr[15]/td[1]/a     #Click on the 15th owner on the list (Linda Björklund)
+    Click Element                       xpath:/html/body/app-root/app-owner-list/div/div/div/table/tbody/tr[11]/td[1]/a     #Click on the 15th owner on the list (Linda Björklund)
     Click Button                        xpath:/html/body/app-root/app-owner-detail/div/div/button[3]    #Click on "Add new pet"
     Input Text                          id:name    ${CF_PET_NAME_OWNER}
     Input Text                          xpath:/html/body/app-root/app-pet-add/div/div/form/div[4]/div/input    ${CF_BIRTH_DATE_PET_OWNER}
@@ -65,7 +68,7 @@ AND can add Pet 1 CF
     Wait Until Element Is Visible       xpath:/html/body/app-root/app-owner-detail/div/div/table[2]     #Wait until a table for added pet is visable
 #We are now on the page with detailed information about towner 1: "Owner information" & "Pets and Visits"
 
-AND can add a visit for Owner CF pet
+AND then add a visit for newly added pet CF
 #Add visit for user CF Linda Björklund cat Morris who has problems with fur
     [Arguments]                         ${CF_VISIT_DATE_PET_1_OWNER}       ${CF_DESCRIPTION_VISIT_PET_1_OWNER}
     Wait Until Element Is Visible       xpath:/html/body/app-root/app-owner-detail/div/div/table[2]/tr/app-pet-list/table/tr/td[1]/dl/button[3]      #button "Add Visit" is visable
@@ -75,12 +78,12 @@ AND can add a visit for Owner CF pet
     Input Text                          id:description      ${CF_DESCRIPTION_VISIT_PET_1_OWNER}     #type description for visit
     Click Button                        //*[@id="visit"]/div[2]/div/button[2]       #Click on button "Add Visit"
 
-AND can see a new booked visit for Owner CF pet
+AND then verify the new booked visit for pet CF
 #We are now on the page with detailed information about owner 1: "Owner information" & "Pets and Visits"
 #verify that a new visit is added and visable:
     Wait Until Element Is Visible       xpath:/html/body/app-root/app-owner-detail/div/div/table[2]/tr/app-pet-list/table/tr/td[2]
 
-AND can verify a new owner CF with pet is saved
+AND then verify the owner name is display with his pet name CF
 #We are on the page with detailed information about towner 1: "Owner information" & "Pets and Visits"
     Wait Until Element Is Visible       xpath:/html/body/app-root/app-owner-detail/div/div/button[1]     #Wait until "Back" button is visible
     Click Button                        xpath:/html/body/app-root/app-owner-detail/div/div/button[1]    #Click on "Back" to go to the list with all owners
