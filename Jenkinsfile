@@ -16,7 +16,7 @@ pipeline{
                }
 				stage ('Build') {
                     steps {
-                            sh 'cd spring-petclinic-rest && mvn compile'
+                            sh 'cd spring-petclinic-rest && mvn compile &'
                         }
                     }
 
