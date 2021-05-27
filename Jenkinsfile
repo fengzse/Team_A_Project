@@ -14,7 +14,6 @@ pipeline{
                                sh 'sleep 20'
                          }
                }
-
 				stage ('Build') {
                     steps {
                             sh 'cd spring-petclinic-rest && mvn compile'
