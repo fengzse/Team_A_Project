@@ -100,7 +100,7 @@ to: 'youremail@server.com, otheremailaddess',
  Ellias, Feng, Jayashree, Manish, Maria, Shubhangi, Victor
 
 # About Repo (repo structure) and the data flow
-We have made the following structure  
+We have made the following structure  . Check the data flow here  ![alt petclinic-junit](git-res/Flowdiagram.png)
 
 
 
