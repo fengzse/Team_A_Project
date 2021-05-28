@@ -105,4 +105,4 @@ We have made the following structure  . Check the data flow here  ![alt petclini
 
 
 ## Credits
-All credit goes to [Spring Project](https://spring.io) and all other delvelopments team and companies with their due credits. Thank you to all for helping us make this project.
+All credit goes to [Spring Project](https://spring.io) and all other developments team and companies with their due credits. Thank you to all for helping us make this project.
