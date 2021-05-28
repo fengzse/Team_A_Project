@@ -105,4 +105,4 @@ We have made the following structure
 
 
 ## Credits
-All credit goes to [Spring Project](https://spring.io).
+All credit goes to [Spring Project](https://spring.io) and all other delvelopments team and companies with their due credits. Thank you to all for helping us make this project.

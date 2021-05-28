@@ -1,6 +1,7 @@
 *** Keywords ***
 BEGIN WEB TEST
     Open browser                about:blank     ${BROWSER}
+    Set Selenium speed          0.2
 
 GIVEN Web page is open at start page
     Load Page
